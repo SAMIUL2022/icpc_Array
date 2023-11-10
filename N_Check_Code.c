@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 int main ()
 {
 int n,m;
@@ -6,26 +7,20 @@ scanf("%d %d",&n,&m);
 int v=n+m+1;
 char x[v];
 scanf("%s",x);
-int flag=1;
-for (int i = 0; i < v; i++)
+int flag=0;
+for (int i = 0; i <v; i++)
 {
-    if (i==n && x[n]!='-')
-    {flag=0;
-       break;;
+   if (x[i]!='-')
+   {
+    flag++;
+   }
 }
-else 
-{if ( i!=n && x[i]<='0'&& x[i]>='9')
-{
-    flag=0;
- 
-}}}
- 
-if (flag==1)
-{
-    printf("Yes\n");
-}
-else
-printf("No\n");
+//    printf("%c\n%d\n",x[n],flag);
+   if (x[n]=='-' && flag==n+m)
+   {
+    printf("Yes");
+   }
+   else printf("No");
 // printf("%d\n",flag);
     return 0;
 }
