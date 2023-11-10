@@ -14,21 +14,38 @@ int a[n];
     }
     
 
-    int fre [1001]={0};
+    
+    int min=INT_MAX;
 for (int j = 0; j < n; j++)
     {
-       fre[a[j]]++;
        
-    }
-for (int j = 0; j < 1001; j++)
-    {
-       if (fre[j]>0)
+       if (a[j]<min)
        {
-       printf("%d-%d\n",j,fre[j]);
+        min=a[j];
        }
        
        
     }
+    int fre=0;
+    for (int  j = 0; j < n; j++)
+    {
+      if (a[j]==min)
+      {
+        fre++;
+      }
+      
+    }
+    
+
+
+  if (fre%2==0)
+   {
+    printf("Unlucky");
+   }
+else
+{ printf("Lucky");}
+   
+   
 
     return 0;
 }
